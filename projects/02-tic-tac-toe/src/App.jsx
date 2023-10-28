@@ -71,16 +71,17 @@ function App() {
               <Square
                 key={index}
                 index={index}
-                children={square}
                 updateBoard={updateBoard}
-              />
+              >
+                {square}
+              </Square>
             )
           })}
       </section>
 
       <section className="turn">
-        <Square isSelected={turn === TURNS.x} children={TURNS.x}/>
-        <Square isSelected={turn === TURNS.o} children={TURNS.o}/>
+          <Square isSelected={turn === TURNS.x}>{TURNS.x}</Square>
+          <Square isSelected={turn === TURNS.o}>{TURNS.o}</Square>
       </section>
 
       <WinnerModal winner={winner} resetGame={resetGame}/>
